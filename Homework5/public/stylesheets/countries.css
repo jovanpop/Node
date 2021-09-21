@@ -1,0 +1,15 @@
+body {
+    margin: 10%;
+    font-size: 20px;
+}
+ul {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+}
+ul li {
+    margin: 10px;
+}
+.list {
+    list-style-type: square;
+}
