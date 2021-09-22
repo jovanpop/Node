@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employees</title>
+    <link rel="stylesheet" href="/stylesheets/countries.css"/>
+</head>
+<body>
+    <h2>Employess</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Last Name</th>
+                <th>EMBG</th>
+                <th>Gender</th>
+            </tr>
+        </thead>
+        <tbody>
+                <% employess.map ((employee)=>{%>
+                <tr>
+                    <td><%= employee.name %></td>
+                    <td><%= employee.lName %></td>
+                    <td><%= employee.EMBG %></td>
+                    <td><%= employee.gender %></td>
+                </tr>
+                <% }) %>
+        </tbody>
+        </table></br>
+        <form action="/employess" method="POST">
+            <input type="text" name="name" placeholder="Name"/></br>
+            <input type="text" name="lName" placeholder="Last Name"/></br>
+            <input type="number" name="EMBG" placeholder="EMBG"/></br></br>
+            Gender:<br></br>
+            <input type="radio" name="gender" value="Male"/>Male
+            <input type="radio" name="gender" value="Female"/>Female</br></br>
+            <button type="submit">Submit</button>
+        </form>
+</body>
+</html>
