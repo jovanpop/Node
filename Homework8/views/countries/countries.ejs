@@ -1,0 +1,25 @@
+<%- include ../partials/header%>
+      <table class="table table-dark table-hover mt-5">
+        <thead>
+          <tr>
+              <th>Name</th>
+              <th>Capital</th>
+              <th class="text-end">Population</th>
+              <th class="text-end">Edit</th>
+          </tr>
+      </thead>
+      <tbody>
+              <% countries.map ((country)=>{%>
+              <tr class="text-start">
+                  <td><%= country.name %></td>
+                  <td><%= country.capital %></td>
+                  <td class="text-end"><%= country.population %></td>
+                  <td class="text-end"><a href="/countries/<%= country._id%>" class="btn btn-warning">Update</a></td>
+              </tr>
+              <% }) %>
+      </tbody>
+      </table>
+      <div class="d-grid gap-2 mt-2">
+        <a href="/countries/create" class="btn btn-primary bg-warning text-black">Add new country</a>
+      </div>
+<%- include ../partials/footer %>

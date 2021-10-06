@@ -1,0 +1,17 @@
+<%- include ../partials/header %>
+<form action="/cars/<%= car._id %>" method="POST">
+    <div class="mb-2 mt-5">
+      <label for="exampleInputEmail1" class="form-label" >Brand</label>
+      <input type="text" class="form-control" id="exampleInputtext1" aria-describedby="textHelp" name="brand" value="<%= car.brand %>">
+    </div>
+    <div class="mb-2">
+      <label for="exampleInputPassword1" class="form-label" >Model</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" name="model"  value="<%= car.model %>" >
+    </div>
+    <div class="mb-2">
+      <label for="exampleInputPassword1" class="form-label">Year</label>
+      <input type="number" class="form-control" id="exampleInputPassword1" name="year" value="<%= car.year %>">
+    </div>
+    <button type="submit" class="btn btn-warning w-100 mt-3">Change</button>
+  </form>
+<%- include ../partials/footer %>
