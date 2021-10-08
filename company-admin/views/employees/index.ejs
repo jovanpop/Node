@@ -14,11 +14,11 @@
   <tbody>
     <% employees.forEach(employee => { %>
       <tr>
-        <th scope="row"><%= employee.first_name %></th>
-        <td><%= employee.last_name %></td>
+        <th scope="row" style="text-transform: capitalize;"><%= employee.first_name %></th>
+        <td style="text-transform: capitalize;"><%= employee.last_name %></td>
         <td><%= employee.email %></td>
-        <td><%= employee.salary %></td>
-        <td><%= employee.position %></td>
+        <td><%= employee.salary %> $</td>
+        <td style="text-transform: capitalize;"><%= employee.position %></td>
         <td>
           <a href="/employees/<%= employee._id %>" class="btn btn-warning"><i class="bi bi-pencil-fill"></i></a>
           <a href="javascript:;" onclick="deleteEmployee(`<%= employee._id %>`)" class="btn btn-danger"><i class="bi bi-trash"></i></a>
