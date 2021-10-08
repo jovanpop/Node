@@ -13,5 +13,6 @@ router.get('/', controller.getAll)
       .get('/:id', controller.getUpdate)
       .post('/', controller.postCreate)
       .delete('/:id', controller.delete)
+      .post ('/:id', controller.postUpdate)
 
 module.exports = router;

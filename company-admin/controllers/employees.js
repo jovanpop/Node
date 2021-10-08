@@ -15,13 +15,15 @@ module.exports = {
   },
   getUpdate: async (req, res) => {
     const employee = await Employee.findById(req.params.id);
-
     res.render('employees/update', { employee: employee })
+  },
+  postUpdate: async (req,res)=>{
+    await Employee.findByIdAndUpdate(req.params.id,req.body);
+    res.redirect('/employees');
   },
   postCreate: async (req, res) => {
     try {
       req.body.email += '@north-company-admin.com';
-
       await Employee.create(req.body, req.body.position.value);
       res.redirect('/employees');
     } catch (error) {
@@ -30,7 +32,6 @@ module.exports = {
   },
   delete: async (req, res) => {
     await Employee.findByIdAndDelete(req.params.id);
-
     res.send('ok');
   }
 }
