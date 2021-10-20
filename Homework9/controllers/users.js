@@ -2,11 +2,8 @@ const User = require ('../models/users');
 
 module.exports= {
     postUser: async(req,res)=>{  
-        const user = await User.create({
-            firstName: req.body.firstName,
-            lastName: req.body.lastName,
-            email: req.body.email.toLowerCase(),
-            password: req.body.password });
+        req.body.email= req.body.email.toLowerCase();
+        const user = await User.create(req.body);
         res.send(user);
     },
     postLogIn: async(req,res)=>{
