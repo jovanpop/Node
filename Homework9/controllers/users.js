@@ -9,6 +9,9 @@ module.exports= {
             if (user){
                 throw new Error ("This email is taken");
             };
+            if (req.body.password.length < 8){
+                throw new Error ("At least 8 characters for pw")
+            }
             req.body.email= req.body.email.toLowerCase();
             req.body.password = bcrypt.hashSync(req.body.password);
             user = await User.create(req.body);
