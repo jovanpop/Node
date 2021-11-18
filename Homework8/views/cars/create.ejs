@@ -8,10 +8,20 @@
           <label for="exampleInputPassword1" class="form-label" >Model</label>
           <input type="text" class="form-control" id="exampleInputPassword1" name="model">
         </div>
-        <div class="mb-2">
+        <div class="mb-5">
           <label for="exampleInputPassword1" class="form-label">Year</label>
           <input type="number" class="form-control" id="exampleInputPassword1" name="year">
         </div>
-        <button type="submit" class="btn btn-warning w-100 mt-3">Add</button>
+        <select class="form-select" aria-label="Default select example" name="country">
+          <option selected>Choose Country</option>
+          <% countries.map (country=> { %> 
+          <option value="<%=country._id%>"><%=country.name %></option>
+          <% }) %>
+        </select>
+        <% if (countries[0]=== undefined) {%>
+        <button disabled type="submit" class="btn btn-warning w-100 mt-5">Add</button>
+        <% } else { %> 
+          <button type="submit" class="btn btn-warning w-100 mt-5">Add</button> 
+          <% }%>
       </form>
 <%- include ../partials/footer%>

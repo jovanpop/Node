@@ -1,20 +1,25 @@
 <%- include ../partials/header%>
       <table class="table table-dark table-hover mt-5">
         <thead>
-          <tr>
+          <tr class="text-center">
               <th>Name</th>
               <th>Capital</th>
-              <th class="text-end">Population</th>
+              <th>Population</th>
+              <th>Cars</th>
               <th class="text-end">Edit</th>
           </tr>
       </thead>
       <tbody>
               <% countries.map ((country)=>{%>
-              <tr class="text-start">
-                  <td><%= country.name %></td>
-                  <td><%= country.capital %></td>
-                  <td class="text-end"><%= country.population %></td>
-                  <td class="text-end"><a href="/countries/<%= country._id%>" class="btn btn-warning">Update</a></td>
+              <tr class="text-center">
+                  <td style="text-transform: capitalize;"><%= country.name %></td>
+                  <td style="text-transform: capitalize;"><%= country.capital %></td>
+                  <td><%= country.population %></td>
+                  <td style="text-transform: capitalize;">Cars</td>
+                  <td class="text-end" >
+                    <a href="/countries/<%= country._id %>" class="btn btn-warning"><i class="bi bi-clock"> Update</i></a>
+                    <a href="javascript:;" onclick="deleteCountry(`<%= country._id %>`)" class="btn btn-danger"><i class="bi bi-trash"> Delete</i></a>
+                  </td>
               </tr>
               <% }) %>
       </tbody>

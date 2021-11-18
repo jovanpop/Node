@@ -5,7 +5,7 @@ const countries = require('../controllers/countries');
 router
 .get("/",countries.getAll)
 .get('/create',countries.getCreate)
-.get('/:id', countries.update)
+.get('/:id', countries.getUpdate)
 .post("/",countries.postCreate)
-.post("/:id",countries.patch)
+.post("/:id",countries.postUpdate)
 module.exports=router;

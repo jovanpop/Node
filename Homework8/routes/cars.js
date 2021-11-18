@@ -6,7 +6,8 @@ router
 .get('/', cars.getAll)
 .get ('/create', cars.getCreate)
 .post('/', cars.postCreate)
-.post('/:id',cars.patch)
-.get('/:id',cars.update)
+.get('/:id',cars.getUpdate)
+.post('/:id',cars.postUpdate)
+
 
 module.exports = router;

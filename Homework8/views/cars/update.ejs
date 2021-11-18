@@ -1,17 +1,23 @@
 <%- include ../partials/header %>
-<form action="/cars/<%= car._id %>" method="POST">
+<form action="/cars/<%= cars._id %>" method="POST">
     <div class="mb-2 mt-5">
       <label for="exampleInputEmail1" class="form-label" >Brand</label>
-      <input type="text" class="form-control" id="exampleInputtext1" aria-describedby="textHelp" name="brand" value="<%= car.brand %>">
+      <input type="text" class="form-control" id="exampleInputtext1" aria-describedby="textHelp" name="brand" value="<%= cars.brand %>">
     </div>
     <div class="mb-2">
       <label for="exampleInputPassword1" class="form-label" >Model</label>
-      <input type="text" class="form-control" id="exampleInputPassword1" name="model"  value="<%= car.model %>" >
+      <input type="text" class="form-control" id="exampleInputPassword1" name="model"  value="<%= cars.model %>" >
     </div>
-    <div class="mb-2">
+    <div class="mb-5">
       <label for="exampleInputPassword1" class="form-label">Year</label>
-      <input type="number" class="form-control" id="exampleInputPassword1" name="year" value="<%= car.year %>">
+      <input type="number" class="form-control" id="exampleInputPassword1" name="year" value="<%= cars.year %>">
     </div>
-    <button type="submit" class="btn btn-warning w-100 mt-3">Change</button>
+    <select class="form-select" aria-label="Default select example" name="country">
+      <option selected value="<%= cars.country._id %>"><%= cars.country.name %></option>
+      <% countries.map (country=> { %> 
+      <option value="<%=country._id%>"><%=country.name %></option>
+      <% }) %>
+    </select>
+    <button type="submit" class="btn btn-warning w-100 mt-5">Change</button>
   </form>
 <%- include ../partials/footer %>
